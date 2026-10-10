@@ -1,6 +1,9 @@
 // ==================== app/src/main/java/com/paperai/ChatScreen.kt ====================
 package com.paperai
 
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.horizontalScroll
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
