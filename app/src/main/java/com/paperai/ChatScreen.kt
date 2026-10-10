@@ -311,15 +311,11 @@ fun ChatScreen(
 
 @Composable
 private fun Modifier.horizontalScrollCompatRow(): Modifier =
-    this.then(
-        androidx.compose.foundation.horizontalScroll(androidx.compose.foundation.rememberScrollState())
-    )
+    this.horizontalScroll(rememberScrollState())
 
 @Composable
 private fun Modifier.verticalScrollColumn(): Modifier =
-    this.then(
-        androidx.compose.foundation.verticalScroll(androidx.compose.foundation.rememberScrollState())
-    )
+    this.verticalScroll(rememberScrollState())
 
 @Composable
 fun MessageBubble(
