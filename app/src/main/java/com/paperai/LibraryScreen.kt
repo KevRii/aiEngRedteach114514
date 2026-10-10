@@ -1,6 +1,8 @@
 // ==================== app/src/main/java/com/paperai/LibraryScreen.kt ====================
 package com.paperai
 
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -326,11 +328,7 @@ fun LibraryScreen(
 
 @Composable
 private fun Modifier.verticalScrollCompat(): Modifier =
-    this.then(
-        androidx.compose.foundation.verticalScroll(
-            androidx.compose.foundation.rememberScrollState()
-        )
-    )
+    this.verticalScroll(rememberScrollState())
 
 private fun indexAt(state: LazyGridState, pos: Offset): Int {
     for (info in state.layoutInfo.visibleItemsInfo) {
