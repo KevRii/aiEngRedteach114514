@@ -33,6 +33,8 @@ import kotlin.math.min
  * 图片编辑器：支持旋转 / 裁切 / 拉伸 / 透视。
  * 通过拖动四个角点实现自由四点变换，四个角点向内拖动即为裁切，向外拉伸即为扩展。
  */
+
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
 fun ImageEditorScreen(
     sourcePath: String,
@@ -179,8 +181,7 @@ fun ImageEditorScreen(
                                 rect.left + quad[2].x * rect.width, rect.top + quad[2].y * rect.height,
                                 rect.left + quad[3].x * rect.width, rect.top + quad[3].y * rect.height
                             )
-                            val m = Matrix()
-                            m.setPolyToPoly(srcPts, 0, dstPts, 0, 4)
+                            
 
                             drawContext.canvas.nativeCanvas.apply {
                                 val saveCount = save()
